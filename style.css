@@ -1,0 +1,128 @@
+body {
+    /* border: 1px solid black;  */
+    background: white;
+    /* width: 960px; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+.picture, .aboutMe, .contacts, .education, .skills {
+    background: #dfdcdc98;
+}
+h1, h2 {
+    color: #A66E00;
+    font-size: 30px;
+}
+.box {
+    max-width: 960px;
+    margin: auto;
+    display: grid;
+    grid-gap: 10px;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(auto-fill, minmax(320px, 3fr));
+    /* grid-template-rows: repeat(3, 3fr); */
+    grid-template-areas: "picture aboutMe aboutMe"
+                        "education education education"                     
+                        "skills contacts contacts"
+                         ;
+
+}
+
+.picture {
+    border: 1px solid black;
+    grid-area: picture;
+}
+
+.aboutMe {
+    border: 1px solid black; 
+    grid-area: aboutMe;
+    text-align: center;
+}
+
+.aboutMe > div {
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.contacts {
+    border: 1px solid black; 
+    grid-area: contacts;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: 25px;
+    padding: 0 0 70px 20px;
+}
+
+.contacts > h2 {
+    text-align: center;
+}
+
+.education {
+    border: 1px solid black;
+    grid-area: education;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    padding: 1% 5% 1% 5%;
+}
+
+.education > h2 {
+    text-align: center;
+}
+
+.education > ul {
+    padding-left: 50px;
+}
+
+ul {
+    font-size: 30px;
+    margin: 5px;
+}
+li {
+    font-size: 20px;
+    margin: 20px;
+}
+.skills {
+    border: 1px solid black;
+    grid-area: skills;
+}
+
+.skills > h2 {
+    text-align: center;
+}
+
+.skills > ul > li {
+    text-align: start;
+}
+
+.cv {
+    width: 50%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 150px;
+    margin-left: 25%;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin: 30px .75em ;
+}
+
+
+@media (max-width: 840px) {
+    .box {
+        border: 1px solid black;
+
+    margin: auto;
+    display: grid;
+    grid-gap: 10px;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(3, 3fr); */
+    grid-template-areas: "picture" 
+                         "aboutMe"
+                         "skills"
+                         "education"
+                         "contacts" ;
+    }
+}
